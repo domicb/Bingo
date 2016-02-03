@@ -1,0 +1,2 @@
+Para que la aplicación sea optima ha de abrirse desde Chrome.
+En mozilla da fallos de css junto a otros elementos jquery y js. 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+max = 90;
+//declaramos el array
+bingo = new Array();
+//lo llenamos
+for(i = 1; i <= max; i++) {
+  bingo.push(i);
+}
+status = 0;
+$("button").click(function(){
+  //si no stop
+if(status == 0) {
+  status = 1;
+  //si stop paramos
+  $("button").text("Stop");
+  roulette = setInterval(function(){
+    //guardamos un random a partir de la longitud que queda
+    random = Math.floor(Math.random() * bingo.length);
+    //sacamos un numero aleatorio del array con los numeros que quedan
+    number = bingo[random];
+    $("#number").text(number);
+  }, 1000);
+} 
+else 
+{
+  status = 0;
+  $("button").text("Start");
+  clearInterval(roulette);
+  random = Math.floor(Math.random() * bingo.length);
+  //escojemos el numero
+  result = bingo[random];
+  //lo borramos del array
+  bingo.splice(random, 1);
+  $("#number").text(result);
+  //mostramos y añadimos en los numeros que han salido
+  $("#result").append(result + ", ");
+}
+});
+});
+</script>
+</head>
+<body>
+  
+
+<button>Start</button>
+
+
+<div id="number">
+</div>
+
+
+<h1>Result</h1>
+<div id="result">
+</div>
+</body>
+</html>

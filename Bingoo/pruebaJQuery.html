@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de jQuery</title>
+</head>
+<body>
+<h3 id="target" class="intro">Esta cabecera desaparece</h3><br>
+
+<p class="target" class="intro">Parrafo uno</p><p class="target">Parrafo dos</p>
+        
+<input type="button" id="mostrar" name="boton1" value="Click para mostrar elementos"><br>
+<input type="button" id="ocultar" name="boton2" value="Click pora ocultar elementos">
+    
+<script src="jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+   $(function(){
+        $("#mostrar").on( "click", function() {
+            $('#target').show(); //muestro mediante id
+            $('.target').show(); //muestro mediante clase
+         });
+        $("#ocultar").on( "click", function() {
+            $('#target').hide(); //oculto mediante id
+            $('.target').hide(); //muestro mediante clase
+        });
+    });
+    </script>
+</body>
+</html>

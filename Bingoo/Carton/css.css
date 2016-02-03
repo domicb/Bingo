@@ -1,0 +1,99 @@
+.bingo td {
+	width: 40px;
+	height: 40px;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 15px;
+	border: 2px solid black;
+}
+
+.bingo{
+	text-align: center;
+	width: 600px;
+	height: 230px;
+	margin: auto;
+	border: 4px;
+	border-style: solid;
+    border-color: #374DF4;
+	border-radius: 15px;
+	background-color: #C7CDFB;
+	font-size: 30px;
+}
+
+#bonoloto{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#cantar{
+	background-position: center, center;
+}
+
+.rojo{
+	background-color: #EFA2AD;
+    cursor:pointer;
+}
+
+
+.blanco{
+	cursor:pointer;
+	background-color: white;
+}
+
+.imagen{
+	background-image: url(icono-bombo.png);
+}
+
+#mostrar{
+	background-color: #73C7FF;
+    width: 360px;
+    height: 80px;
+    outline: none;
+    margin: 0.2px;
+    font:  bold 220% arial; 
+    text-align: center;
+    color: white;    /*Color de la letra*/
+    border: 0px; /* Quita el sombreado */
+    border-radius: 6px;
+}
+
+#numero{
+	font-size: 30px;
+}
+
+#cantar {
+  background: #347ed9;
+  background-image: -webkit-linear-gradient(top, #347ed9, #135882);
+  background-image: -moz-linear-gradient(top, #347ed9, #135882);
+  background-image: -ms-linear-gradient(top, #347ed9, #135882);
+  background-image: -o-linear-gradient(top, #347ed9, #135882);
+  background-image: linear-gradient(to bottom, #347ed9, #135882);
+  -webkit-border-radius: 23;
+  -moz-border-radius: 23;
+  border-radius: 23px;
+  text-shadow: 5px 2px 4px #666666;
+  font-family: Georgia;
+  color: white;
+  font-size: 26px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  outline: none;
+  cursor:pointer;
+}
+
+#cantar:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+#cantar_div{
+	margin-right: 220px;
+}
+
+body{
+   background: url(fondo.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

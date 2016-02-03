@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="izquierda">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="css.css">
+</head>
+
+<script type="text/javascript">
+/*********************************
+ Autor: Alejandro Dos Santos Rojo
+ Fecha creación: 11/03/2015
+ Última modificación: 11/03/2015
+ Versión:1.1
+***********************************/
+
+var contador_acierto=0;
+var jugadores = 0;
+var valor = 0;
+function abrir(){
+
+	if (document.getElementById("jugador").value <5 || document.getElementById("jugador").value >20){//COntrola los valores obligatorios
+		alert ("Introduzca numero de jugadores entre 5 y 20");
+	}
+
+	
+	if (document.getElementById("valor").value <1 || document.getElementById("valor").value >5){
+		alert ("Introduzca numero de valor del carton entre 1 y 5");
+	}	 
+
+
+	else{;
+        window.open("../Carton/Bingo.html", "derecha", "toolbar=no, location=no")
+		jugadores = document.getElementById("jugador").value;
+		valor = document.getElementById("valor").value;
+	}
+}
+</script>
+
+<body>
+	<div id="botones">
+		<b>Numero de Jugadores</b>
+		<input type="number" min="5" max="20" id="jugador"><br><br>
+		<b>Valor del carton</b><br>
+		<input type="number" min="1" max="5" id="valor"><br><br>
+	<div id="boton" align="center">
+		<input type="button" value="Generar" onclick="abrir()"  id="generar"/>
+	</div>
+	</div>
+</body>
+</html>

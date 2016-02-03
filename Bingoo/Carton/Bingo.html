@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Cartón</title>
+		<meta charset="utf-8">
+		<link rel=stylesheet type="text/css" href="css.css">
+		<script type="text/javascript" src="script.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+		<script>
+			var Listanumeros = []; //Array que guarda los numeros del bombo salidos
+			var llamada;
+			var bombointerval;
+			var global; //Variable que guarda funcion Random_1_90
+
+			$(document).ready(function(){	
+				global = Random_1_90;
+				Bombo();	
+
+			function Random_1_90(){//Devuelve numeros entre 1 y 90
+				if (Listanumeros.length==90){ //Si el array del bombo esta lleno para
+					document.getElementById("mostrar").value="No hay más números";
+					clearInterval(bombointerval);
+				}
+
+				else{
+					var cont=0;
+					var Json = JSON.stringify(Listanumeros);
+					
+					 llamada = $.get("Numero.php",{Valor:Json},function(Valor){
+						document.getElementById("mostrar").value = Valor;
+						
+						Listanumeros.push(Valor);
+					});
+				}
+			}
+
+			function Bombo(){
+				bombointerval=setInterval(Random_1_90, 2500);
+			}
+		});
+		</script>
+
+	</head>
+	<body>
+		<div align="center"><input type="text" id="mostrar" readonly/></div><br><br>
+		<div  id="numero" align="center"></div>
+		<div id="bonoloto" align="center"></div>
+		<br><br><br>
+		<div id="cantar_div" align="right">
+			<input type="button" id="cantar" value="Cantar Bingo" onclick="cantar_bingo()"/>
+		</div>
+	</body>
+</html>
